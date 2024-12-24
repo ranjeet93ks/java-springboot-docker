@@ -1,0 +1,17 @@
+1. mvn clean package -DskipTests  -> to create jar
+
+2. docker build -t java-boot-docker.jar . -> to create image
+
+3. docker image ls -> to see list of existing docke images
+
+4. docker run -p 1433:1433 --name sqlserverdb -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Ranjs1993' -d mcr.microsoft.com/mssql/server:2022-latest   ->to create mssql container
+or
+5. docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=Ranjs1993 -e MYSQL_DATABASE=java_boot_docker  -p 3310:3306 -d mysql:latest
+
+6. docker run -p 8080:8080 java-boot-docker.jar  -> to run the application --> not working
+
+7. connect with mysql connector using port no 3310 mentioned above n pwd mentioned in application.propeties
+
+8. db will be created in mysql
+
+9. run spring boot application
